@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import firebase from 'firebase/app'
+import firebase from "firebase/app"
 import { rhythm, scale } from "../utils/typography"
 
 const firebaseConfig = {
@@ -10,7 +10,7 @@ const firebaseConfig = {
   projectId: "k2wanko-site",
   storageBucket: "k2wanko-site.appspot.com",
   messagingSenderId: "878455749238",
-  appId: "1:878455749238:web:851b05503b61412496bd57"
+  appId: "1:878455749238:web:851b05503b61412496bd57",
 }
 firebase.initializeApp(firebaseConfig)
 
