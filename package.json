@@ -8,6 +8,7 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "firebase": "^7.12.0",
     "gatsby": "^2.19.45",
     "gatsby-image": "^2.2.44",
     "gatsby-plugin-feed": "^2.3.29",
@@ -28,6 +29,7 @@
     "gatsby-transformer-sharp": "^2.3.19",
     "netlify-cms-app": "^2.11.32",
     "prismjs": "^1.19.0",
+    "query-string": "^6.11.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
@@ -38,6 +40,7 @@
     "typography-theme-wordpress-2016": "^0.16.19"
   },
   "devDependencies": {
+    "firebase-tools": "^7.15.1",
     "gatsby-cli": "^2.11.0",
     "prettier": "^1.19.1"
   },

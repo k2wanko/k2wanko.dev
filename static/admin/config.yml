@@ -1,22 +1,23 @@
 backend:
-    name: github
-    repo: k2wanko/gatsby-blog
-    base_url: http://localhost:8000
-    auth_endpoint: /auth
+  name: github
+  repo: k2wanko/gatsby-blog
+  base_url: http://localhost:8000
+  auth_endpoint: /auth
+  api_root: https://api.github.com
   
-  media_folder: static/img
-  public_folder: /img
-  
-  collections:
-    - name: "blog"
-      label: "Blog"
-      folder: "content/blog"
-      create: true
-      slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-      editor:
-       preview: false
-      fields:
-        - { label: "Title", name: "title", widget: "string" }
-        - { label: "Publish Date", name: "date", widget: "datetime" }
-        - { label: "Description", name: "description", widget: "string" }
-        - { label: "Body", name: "body", widget: "markdown" }
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
