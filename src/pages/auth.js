@@ -8,7 +8,6 @@ import SEO from "../components/seo"
 
 const Auth = ({ data, location }) => {
     const query = queryString.parse(location.search)
-    const { provider } = query
     const siteTitle = data.site.siteMetadata.title
     const [user, setUser] = useState(null)
 
@@ -20,7 +19,7 @@ const Auth = ({ data, location }) => {
                 auth.signOut()
                 return
             }
-            window.opener.postMessage(`authorizing:${provider}`, '*')
+            window.opener.postMessage(`authorizing:github`, '*')
             const provider = new firebase.auth.GithubAuthProvider()
             provider.addScope(query.scope)
             auth.signInWithRedirect(provider)
@@ -29,12 +28,13 @@ const Auth = ({ data, location }) => {
         auth.getRedirectResult().then(result => {
             if (result.credential) {
                 const token = result.credential.accessToken
+                result.credential
                 window.opener.postMessage(
-                    `authorization:${provider}:success:${JSON.stringify({
-                        provider,
+                    `authorization:github:success:${JSON.stringify({
+                        provider: 'github',
                         token
                     })}`,
-                    window.opener.origin
+                    location.origin
                 )
             }
 
@@ -44,8 +44,8 @@ const Auth = ({ data, location }) => {
         }).catch(err => {
             const errorMessage = err.message
             window.opener.postMessage(
-                `authorization:${provider}:error:${errorMessage}`,
-                window.opener.origin
+                `authorization:github:error:${errorMessage}`,
+                location.origin
             )
         })
 
