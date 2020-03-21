@@ -30,7 +30,6 @@ const Auth = ({ data, location }) => {
       .then(result => {
         if (result.credential) {
           const token = result.credential.accessToken
-          result.credential
           window.opener.postMessage(
             `authorization:github:success:${JSON.stringify({
               provider: "github",

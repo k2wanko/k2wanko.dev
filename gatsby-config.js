@@ -53,18 +53,18 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `G-GEHQQNBHJP`,
       },
     },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `コキチーズのホームページ`,
+        short_name: `k2wanko's site`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
+        background_color: `#5a9216`,
+        theme_color: `#8bc34a`,
         display: `minimal-ui`,
         icon: `content/assets/icon.png`,
       },
@@ -79,6 +79,12 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-    `gatsby-plugin-netlify-cms`,
+    {
+      resolve: `gatsby-plugin-netlify-cms`,
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+        manualInit: true
+      }
+    },
   ],
 }

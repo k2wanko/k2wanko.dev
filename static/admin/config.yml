@@ -1,7 +1,6 @@
 backend:
   name: github
   repo: k2wanko/gatsby-blog
-  base_url: https://k2wanko-site.web.app
   auth_endpoint: /auth
   api_root: https://api.github.com
   
