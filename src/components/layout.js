@@ -43,12 +43,7 @@ const Layout = ({ location, title, style, children }) => {
       }}
     >
       {header ? <header>{header}</header> : null}
-      <main
-        className="is-fullheight"
-        style={{
-          minHeight: '100vh'
-        }}
-      >{children}</main>
+      <main>{children}</main>
       {/* <footer>
         © {new Date().getFullYear()}
         {` `}
