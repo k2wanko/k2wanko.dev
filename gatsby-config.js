@@ -9,6 +9,8 @@ module.exports = {
     siteUrl: `https://www.k2wanko.dev/`,
     social: {
       twitter: `k2wanko`,
+      github: `k2wanko`,
+      email: `k2.wanko@gmail.com`
     },
   },
   plugins: [
@@ -83,8 +85,9 @@ module.exports = {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
-        manualInit: true
-      }
+        manualInit: true,
+      },
     },
+    `gatsby-plugin-sass`,
   ],
 }

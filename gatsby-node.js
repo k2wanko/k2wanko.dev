@@ -1,6 +1,25 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+exports.onCreateWebpackConfig = ({
+  stage,
+  rules,
+  loaders,
+  plugins,
+  actions,
+}) => {
+  actions.setWebpackConfig({
+    module: {
+      rules: [
+        {
+          test: /firebase-init\.json$/,
+          loader: path.resolve('./plugins/webpack-firebase-init-loader')
+        }
+      ]
+    }
+  })
+}
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 

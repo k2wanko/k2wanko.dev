@@ -1,47 +1,19 @@
 import React from "react"
 import { Link } from "gatsby"
+import firebaseConfig from '../firebase-init.json'
 import firebase from "firebase/app"
-import { rhythm, scale } from "../utils/typography"
-
-const firebaseConfig = {
-  apiKey: "AIzaSyAZJjc21YxOR27-04FFRGAk2eqtqqpC5bM",
-  authDomain: "k2wanko-site.firebaseapp.com",
-  databaseURL: "https://k2wanko-site.firebaseio.com",
-  projectId: "k2wanko-site",
-  storageBucket: "k2wanko-site.appspot.com",
-  messagingSenderId: "878455749238",
-  appId: "1:878455749238:web:851b05503b61412496bd57",
-}
+import { rhythm } from "../utils/typography"
+import "./layout.scss"
 firebase.initializeApp(firebaseConfig)
 
-const Layout = ({ location, title, children }) => {
+const Layout = ({ location, title, style, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header
 
-  if (location.pathname === rootPath) {
-    header = (
-      <h1
-        style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h1>
-    )
-  } else {
+  if (location.pathname !== rootPath) {
     header = (
       <h3
+        className='subtitle'
         style={{
           fontFamily: `Montserrat, sans-serif`,
           marginTop: 0,
@@ -62,20 +34,26 @@ const Layout = ({ location, title, children }) => {
   }
   return (
     <div
-      style={{
+      className="hero is-fullheight"
+      style={style || {
         marginLeft: `auto`,
         marginRight: `auto`,
         maxWidth: rhythm(24),
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
-      <header>{header}</header>
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
+      {header ? <header>{header}</header> : null}
+      <main
+        className="is-fullheight"
+        style={{
+          minHeight: '100vh'
+        }}
+      >{children}</main>
+      {/* <footer>
+        © {new Date().getFullYear()}
         {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+        <a href="https://www.k2wanko.dev">k2wanko</a>
+      </footer> */}
     </div>
   )
 }

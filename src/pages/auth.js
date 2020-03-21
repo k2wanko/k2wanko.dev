@@ -54,7 +54,7 @@ const Auth = ({ data, location }) => {
     return () => {
       unsubscribe()
     }
-  }, [user])
+  }, [user, location.origin, query.scope])
 
   return (
     <Layout location={location} title={siteTitle}>

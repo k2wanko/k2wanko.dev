@@ -29,6 +29,7 @@ const Bio = () => {
           }
           social {
             twitter
+            github
           }
         }
       }
@@ -38,29 +39,53 @@ const Bio = () => {
   const { author, social } = data.site.siteMetadata
   return (
     <div
-      style={{
-        display: `flex`,
-        marginBottom: rhythm(2.5),
-      }}
+      className="media"
+    // style={{
+    //   display: `flex`,
+    //   marginBottom: rhythm(2.5),
+    // }}
     >
-      <Image
-        fixed={data.avatar.childImageSharp.fixed}
-        alt={author.name}
-        style={{
-          marginRight: rhythm(1 / 2),
-          marginBottom: 0,
-          minWidth: 50,
-          borderRadius: `100%`,
-        }}
-        imgStyle={{
-          borderRadius: `50%`,
-        }}
-      />
-      <p>
+      <div className="media-left">
+        <p className="image is-64x64">
+          <Image
+            fixed={data.avatar.childImageSharp.fixed}
+            alt={author.name}
+            style={{
+              marginRight: rhythm(1 / 2),
+              marginBottom: 0,
+              minWidth: 50,
+              borderRadius: `100%`,
+            }}
+            imgStyle={{
+              borderRadius: `50%`,
+            }}
+          />
+        </p>
+      </div>
+      <div className="media-content">
+        <div class="content">
+          <p>
+            <strong>{author.name}</strong>
+            <br />{author.summary}
+          </p>
+        </div>
+        <nav class="level is-mobile">
+          <div class="level-left">
+            <a class="level-item" href={`https://twitter.com/${social.twitter}`}>
+              <span class="icon is-small"><i class="mdi mdi-24px mdi-twitter"></i></span>
+            </a>
+            <a class="level-item" href={`https://github.com/${social.github}`}>
+              <span class="icon is-small"><i class="mdi mdi-24px mdi-github"></i></span>
+            </a>
+          </div>
+        </nav>
+      </div>
+
+      {/* <p>
         <strong>{author.name}</strong> {author.summary}
         {` `}
         <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>
-      </p>
+      </p> */}
     </div>
   )
 }
