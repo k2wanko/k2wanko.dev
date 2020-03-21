@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 import queryString from 'query-string'
 import * as firebase from 'firebase/app'
-import 'firebase/auth'
 import Layout from "../components/layout"
+import 'firebase/auth'
 import SEO from "../components/seo"
 
 const Auth = ({ data, location }) => {
@@ -20,7 +20,7 @@ const Auth = ({ data, location }) => {
                 auth.signOut()
                 return
             }
-            window.opener.postMessage("authorizing:github", "*")
+            window.opener.postMessage(`authorizing:${provider}`, '*')
             const provider = new firebase.auth.GithubAuthProvider()
             provider.addScope(query.scope)
             auth.signInWithRedirect(provider)
@@ -30,8 +30,8 @@ const Auth = ({ data, location }) => {
             if (result.credential) {
                 const token = result.credential.accessToken
                 window.opener.postMessage(
-                    `authorization:github:success:${JSON.stringify({
-                        provider: 'github',
+                    `authorization:${provider}:success:${JSON.stringify({
+                        provider,
                         token
                     })}`,
                     window.opener.origin
@@ -42,11 +42,9 @@ const Auth = ({ data, location }) => {
                 setUser(user)
             }
         }).catch(err => {
-            console.error('@@@', err)
-            // const errorCode = err.code
             const errorMessage = err.message
             window.opener.postMessage(
-                `authorization:github:error:${errorMessage}`,
+                `authorization:${provider}:error:${errorMessage}`,
                 window.opener.origin
             )
         })
