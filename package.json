@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "k2wanko.dev",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "k2wanko's site",
+  "version": "1.0.0",
+  "author": "Kazuhiro Kubota <k2.wanko@gmail.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/k2wanko/k2wanko.dev/issues"
   },
   "dependencies": {
     "firebase": "^7.12.0",
@@ -44,7 +44,7 @@
     "gatsby-cli": "^2.11.0",
     "prettier": "^1.19.1"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/k2wanko/k2wanko.dev#readme",
   "keywords": [
     "gatsby"
   ],
@@ -52,7 +52,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/k2wanko/k2wanko.dev.git"
   },
   "scripts": {
     "build": "gatsby build",
