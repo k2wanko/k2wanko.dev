@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import * as firebase from 'firebase/app'
+import firebase from 'firebase/app'
 import { rhythm, scale } from "../utils/typography"
 
 const firebaseConfig = {
