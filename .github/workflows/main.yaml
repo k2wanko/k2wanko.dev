@@ -30,6 +30,10 @@ jobs:
     - run: npm test
       env:
         CI: true
+    - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      with:
+        version: '284.0.0'
+        service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
     - name: Deploy
       if: github.ref == 'refs/heads/master'
-      run: npm run deploy
+      run: FIREBASE_TOKEN=$(gcloud auth print-access-token) npm run deploy
