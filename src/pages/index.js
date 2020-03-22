@@ -31,8 +31,8 @@ const BlogIndex = ({ data, location }) => {
               marginRight: `auto`,
               maxWidth: rhythm(32),
             }}>
-            <h3
-              className='title'
+            <h1
+              className='title is-hidden-mobile'
               style={{
                 fontFamily: `Montserrat, sans-serif`,
                 marginTop: 20,
@@ -48,32 +48,28 @@ const BlogIndex = ({ data, location }) => {
               >
                 {siteTitle}
               </Link>
-            </h3>
-            <div>
+            </h1>
+            <h4 className="subtitle is-5" style={{ marginTop: '40px' }}>Blog</h4>
+            <div class="tile is-ancestor">
               {posts.map(({ node }) => {
                 const title = node.frontmatter.title || node.fields.slug
                 return (
-                  <article key={node.fields.slug}>
-                    <header>
-                      <h3
-                        style={{
-                          marginBottom: rhythm(1 / 4),
-                        }}
-                      >
+                  <div className="tile is-parent is-4">
+                    <article key={node.fields.slug} className="tile is-child box">
+                      <p className="title is-5">
                         <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                           {title}
                         </Link>
-                      </h3>
+                      </p>
                       <small>{node.frontmatter.date}</small>
-                    </header>
-                    <section>
                       <p
+                        className="subtitle"
                         dangerouslySetInnerHTML={{
                           __html: node.frontmatter.description || node.excerpt,
-                        }}
-                      />
-                    </section>
-                  </article>
+                        }}></p>
+                      {/* <p className="content"></p> */}
+                    </article>
+                  </div>
                 )
               })}</div>
           </div>
