@@ -63,19 +63,19 @@ const Bio = () => {
         </p>
       </div>
       <div className="media-content">
-        <div class="content">
+        <div className="content">
           <p>
             <strong>{author.name}</strong>
             <br />{author.summary}
           </p>
         </div>
-        <nav class="level is-mobile">
-          <div class="level-left">
-            <a class="level-item" href={`https://twitter.com/${social.twitter}`}>
-              <span class="icon is-small"><i class="mdi mdi-24px mdi-twitter"></i></span>
+        <nav className="level is-mobile">
+          <div className="level-left">
+            <a className="level-item" href={`https://twitter.com/${social.twitter}`}>
+              <span className="icon is-small"><i className="mdi mdi-24px mdi-twitter"></i></span>
             </a>
-            <a class="level-item" href={`https://github.com/${social.github}`}>
-              <span class="icon is-small"><i class="mdi mdi-24px mdi-github"></i></span>
+            <a className="level-item" href={`https://github.com/${social.github}`}>
+              <span className="icon is-small"><i className="mdi mdi-24px mdi-github"></i></span>
             </a>
           </div>
         </nav>

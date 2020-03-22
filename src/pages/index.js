@@ -13,14 +13,10 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle} style={{
     }}>
       <SEO title="Top" />
-      <div className="columns is-fullheight"
+      <div className="columns"
         style={{ margin: '0 0' }}>
         <div
-          className="section column is-one-quarter"
-          style={{
-            borderRight: 'solid 1px #e1e4e8',
-            minHeight: '100vh',
-          }}
+          className="section column is-one-quarter side-profile"
         >
           <Profile />
         </div>

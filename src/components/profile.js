@@ -32,7 +32,7 @@ const Profile = () => {
 
     const { author, social } = data.site.siteMetadata
     return (
-        <div className="is-fullheight">
+        <div>
             <Image
                 fixed={data.avatar.childImageSharp.fixed}
                 alt={author.name}
@@ -48,21 +48,21 @@ const Profile = () => {
                 <ul>
                     <li>
                         <span>
-                            <i class="mdi mdi-24px mdi-twitter mdi-dark"></i>
+                            <i className="mdi mdi-24px mdi-twitter mdi-dark"></i>
                             {` `}
                             <a href={`https://twitter.com/${social.twitter}`}>@{social.twitter}</a>
                         </span>
                     </li>
                     <li>
                         <span>
-                            <i class="mdi mdi-24px mdi-github mdi-dark"></i>
+                            <i className="mdi mdi-24px mdi-github mdi-dark"></i>
                             {` `}
                             <a href={`https://github.com/${social.github}`}>@{social.github}</a>
                         </span>
                     </li>
                     <li>
                         <span>
-                            <i class="mdi mdi-24px mdi-email-outline mdi-dark"></i>
+                            <i className="mdi mdi-24px mdi-email-outline mdi-dark"></i>
                             {` `}
                             <a href={`mailto:${social.email}`}>{social.email}</a>
                         </span>

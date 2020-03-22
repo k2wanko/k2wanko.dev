@@ -34,7 +34,6 @@ const Layout = ({ location, title, style, children }) => {
   }
   return (
     <div
-      className="hero is-fullheight"
       style={style || {
         marginLeft: `auto`,
         marginRight: `auto`,

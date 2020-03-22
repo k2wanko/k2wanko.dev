@@ -4,6 +4,23 @@
 @import "~bulma/bulma.sass";
 @import "~@mdi/font/css/materialdesignicons.min.css";
 
+
 html, body, #___gatsby, main, #gatsby-focus-wrapper {
     height: 100%;
+}
+
+body {
+    background: rgb(250, 251, 252);
+}
+
+.side-profile {
+    background: #ffffff;
+    @include desktop {
+        min-height: 100vh;
+        border-right: solid 1px #e1e4e8;
+    }
+
+    @include until($desktop) {
+        border-bottom: solid 1px #e1e4e8;
+    }
 }
