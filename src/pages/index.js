@@ -62,7 +62,9 @@ const BlogIndex = ({ data, location }) => {
                           {title}
                         </Link>
                       </p>
-                      <small>{node.frontmatter.date}</small>
+                      <figure className="image is-16by9">
+                        <img src={node.frontmatter.thumbnail} />
+                      </figure>
                       <p
                         className="subtitle"
                         dangerouslySetInnerHTML={{
@@ -80,6 +82,7 @@ const BlogIndex = ({ data, location }) => {
                           )
                         })}
                       </div>
+                      <p><small>{node.frontmatter.date}</small></p>
                       {/* <p className="content"></p> */}
                     </article>
                   </div>
@@ -113,6 +116,7 @@ export const pageQuery = graphql`
             title
             description
             tags
+            thumbnail
           }
         }
       }
