@@ -3,7 +3,9 @@ backend:
   repo: k2wanko/gatsby-blog
   auth_endpoint: /auth
   api_root: https://api.github.com
-  
+
+publish_mode: editorial_workflow
+
 media_folder: static/img
 public_folder: /img
 

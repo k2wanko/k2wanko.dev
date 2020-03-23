@@ -49,13 +49,14 @@ const BlogIndex = ({ data, location }) => {
                 {siteTitle}
               </Link>
             </h1>
-            <h4 className="subtitle is-5" style={{ marginTop: '40px' }}>Blog</h4>
-            <div class="tile is-ancestor">
+            <h4 className="subtitle is-5" style={{ marginTop: '40px' }}>Blog
+            <span style={{textAlign: 'right'}}><a target="_blank" rel="noopener" href="/rss.xml"><i className="mdi mdi-24px mdi-rss mdi-dark rss-icon"></i></a></span></h4>
+            <div className="tile is-ancestor columns is-multiline">
               {posts.map(({ node }) => {
                 const title = node.frontmatter.title || node.fields.slug
                 return (
-                  <div className="tile is-parent is-4">
-                    <article key={node.fields.slug} className="tile is-child box">
+                  <div key={node.fields.slug} className="tile is-parent is-6">
+                    <article className="tile is-child box">
                       <p className="title is-5">
                         <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                           {title}

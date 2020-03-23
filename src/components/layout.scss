@@ -13,8 +13,13 @@ body {
     background: rgb(250, 251, 252);
 }
 
+a {
+    box-shadow: none;
+}
+
 .side-profile {
     background: #ffffff;
+    min-width: 300px;
     @include desktop {
         min-height: 100vh;
         border-right: solid 1px #e1e4e8;
@@ -23,4 +28,8 @@ body {
     @include until($desktop) {
         border-bottom: solid 1px #e1e4e8;
     }
+}
+
+.rss-icon:hover:before {
+    color: orange;
 }
