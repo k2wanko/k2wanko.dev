@@ -20,6 +20,11 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        allow_add: true
+        pattern: ['[a-z_-]{3,12}', "Should be between 3 and 12 characters in lower case letters."]
       - { label: "Thumbnail", name: "thumbnail", widget: "image" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }

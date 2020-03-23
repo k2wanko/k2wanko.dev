@@ -8,6 +8,9 @@ for i in $(seq 1 100); do
 ---
 title: dummy-${i}
 date: ${d}T15:26:30.801Z
+tags:
+  - test
+  - hello
 thumbnail: /img/k2wanko_a.png
 description: dummy-${i}
 ---

@@ -50,7 +50,7 @@ const BlogIndex = ({ data, location }) => {
               </Link>
             </h1>
             <h4 className="subtitle is-5" style={{ marginTop: '40px' }}>Blog
-            <span style={{textAlign: 'right'}}><a target="_blank" rel="noopener" href="/rss.xml"><i className="mdi mdi-24px mdi-rss mdi-dark rss-icon"></i></a></span></h4>
+            <span style={{ textAlign: 'right' }}><a target="_blank" rel="noopener" href="/rss.xml"><i className="mdi mdi-24px mdi-rss mdi-dark rss-icon"></i></a></span></h4>
             <div className="tile is-ancestor columns is-multiline">
               {posts.map(({ node }) => {
                 const title = node.frontmatter.title || node.fields.slug
@@ -68,6 +68,18 @@ const BlogIndex = ({ data, location }) => {
                         dangerouslySetInnerHTML={{
                           __html: node.frontmatter.description || node.excerpt,
                         }}></p>
+                      <div className="field is-grouped is-grouped-multiline">
+                        {node.frontmatter.tags.map(tag => {
+                          return (
+                            <div key={tag} className="control">
+                              <div className="tags">
+                                {/* TODO: (k2wanko) create tag list page <Link className="tag" to={`/tags/${tag}`}>{tag}</Link> */}
+                                <span className="tag">{tag}</span>
+                              </div>
+                            </div>
+                          )
+                        })}
+                      </div>
                       {/* <p className="content"></p> */}
                     </article>
                   </div>
@@ -100,6 +112,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            tags
           }
         }
       }
