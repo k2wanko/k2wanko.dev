@@ -1,5 +1,3 @@
 .git/
-node_moudles/
-.cache
-public
+node_modules
 .firebase
