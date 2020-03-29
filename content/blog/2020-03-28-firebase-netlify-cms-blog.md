@@ -1,4 +1,5 @@
 ---
+slug: firebase-netlify-cms-blog
 title: FirebaseとNetlify CMSでブログを作る
 date: 2020-03-29T10:00:35.031Z
 tags:
