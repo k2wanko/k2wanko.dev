@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import firebase from "firebase/app"
+import "firebase/analytics"
 
 const SEO = ({ description, lang, meta, title, thumbnail, tags, sitePath }) => {
   const { site } = useStaticQuery(
