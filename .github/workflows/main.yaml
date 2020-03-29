@@ -1,9 +1,10 @@
 name: Node.js CI
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   build:
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
 
     strategy:
@@ -35,5 +36,4 @@ jobs:
       env:
         CI: true
     - name: Deploy
-      if: github.ref == 'refs/heads/master'
       run: FIREBASE_TOKEN=$(gcloud auth print-access-token) npm run deploy
