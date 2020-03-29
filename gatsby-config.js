@@ -6,7 +6,7 @@ module.exports = {
       summary: `千葉県で暮らすエンジニア`,
     },
     description: `コキチーズのホームページ`,
-    siteUrl: `https://www.k2wanko.dev/`,
+    siteUrl: `https://www.k2wanko.dev`,
     thumbnail: `/img/top.png`,
     social: {
       twitter: `k2wanko`,

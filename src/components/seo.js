@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import path from 'path'
 
 const SEO = ({ description, lang, meta, title, thumbnail, tags, sitePath }) => {
   const { site } = useStaticQuery(
@@ -29,13 +28,13 @@ const SEO = ({ description, lang, meta, title, thumbnail, tags, sitePath }) => {
   if (!sitePath) {
     url = siteUrl
   } else {
-    url = path.join(siteUrl, sitePath)
+    url = `${siteUrl}${sitePath}`
   }
 
   const metaDescription = description || site.siteMetadata.description
   thumbnail = thumbnail ?? site.siteMetadata.thumbnail
   if (thumbnail.startsWith('/')) {
-    thumbnail = path.join(siteUrl, thumbnail)
+    thumbnail = `${siteUrl}${thumbnail}`
   }
 
   if (!tags) {
