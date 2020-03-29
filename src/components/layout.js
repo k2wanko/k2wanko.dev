@@ -1,10 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import firebaseConfig from '../firebase-init.json'
-import firebase from "firebase/app"
 import { rhythm } from "../utils/typography"
 import "./layout.scss"
-firebase.initializeApp(firebaseConfig)
 
 const Layout = ({ location, title, style, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
