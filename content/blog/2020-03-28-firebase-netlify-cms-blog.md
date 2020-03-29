@@ -108,10 +108,8 @@ collections:
 
 # Netlify CMSのバックエンドにFirebase 認証を利用する
 
-デフォルトではNetlify CMSはNetlifyのAPIを使ってGitHub認証をサポートしてくれます。\
-~~しかし、Firebaseと心中する気持ちはあってもNetlifyとは心中する気がない~~普段から使い慣れているFirebaseを使えないかなと調べました。
-
-そしたらCloud Functionsを使ってNetlify CMSの認証をしているサンプルがあり、中を見てみたらどうもGitHubのトークンさえ渡せればいいだけで自分で一切サーバーを持たなくてもなんとかなりそうだったのでその方法を紹介します。
+デフォルトではNetlify CMSはNetlifyのAPIを使ってGitHub認証をサポートしてくれますが、それ以外だと自前でサーバーを用意する必要がありそうで、Firebaseでできる方法がないか調べたところ\
+Cloud Functionsを使ってNetlify CMSの認証をしているサンプルがあり、中を見てみたらどうもGitHubのトークンさえ渡せればいいだけで自分で一切サーバーを持たなくてもなんとかなりそうだったのでその方法を紹介します。
 
 [Herohtar/netlify-cms-oauth-firebase: Firebase Cloud Function based OAuth2 GitHub backend for Netlify CMS](https://github.com/Herohtar/netlify-cms-oauth-firebase)
 
