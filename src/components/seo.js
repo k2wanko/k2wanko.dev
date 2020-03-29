@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import firebase from "firebase/app"
 
 const SEO = ({ description, lang, meta, title, thumbnail, tags, sitePath }) => {
   const { site } = useStaticQuery(
@@ -24,12 +25,14 @@ const SEO = ({ description, lang, meta, title, thumbnail, tags, sitePath }) => {
 
   const { siteUrl } = site.siteMetadata
 
-  let url
+
   if (!sitePath) {
-    url = siteUrl
-  } else {
-    url = `${siteUrl}${sitePath}`
+    sitePath = window.location.pathname
   }
+
+  firebase.analytics().setCurrentScreen(sitePath)
+
+  const url = `${siteUrl}${sitePath}`
 
   const metaDescription = description || site.siteMetadata.description
   thumbnail = thumbnail ?? site.siteMetadata.thumbnail
