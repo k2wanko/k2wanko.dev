@@ -24,8 +24,8 @@ jobs:
       # Setup gcloud CLI
       - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
-          version: '274.0.0'
-          service_account_key: ${{ secrets.GCP_KEY }}
+          version: '284.0.0'
+          service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
 
       # Configure gcloud
       - run: |
@@ -74,8 +74,8 @@ jobs:
       # Setup gcloud CLI
       - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
-          version: '274.0.0'
-          service_account_key: ${{ secrets.GCP_KEY }}
+          version: '284.0.0'
+          service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
 
       # Configure gcloud
       - run: |
