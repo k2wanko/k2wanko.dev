@@ -1,0 +1,16 @@
+.blog-post {
+    h1 {
+        @include desktop {
+            font-size: 2.5rem;
+        }
+
+        @include until($desktop) {
+            font-size: 1rem;
+        }
+    }
+
+    p {
+        margin-top: 1.75rem;
+        margin-bottom: 1.75rem;
+    }
+}
