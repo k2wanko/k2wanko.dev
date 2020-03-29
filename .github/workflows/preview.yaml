@@ -30,10 +30,19 @@ jobs:
           gcloud config set run/platform managed
           gcloud config set run/region ${REGION}
           gcloud auth configure-docker
-
+      - uses: actions/cache@v1
+        id: cache
+        with:
+          path: |
+            ~/.npm
+            node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
       # Build the Docker image
       - name: Build
         run: |
+          FIREBASE_TOKEN=$(gcloud auth print-access-token) npm run build --if-present
           docker build -t ${HOSTNAME}/${PROJECT}/${SERVICE} .
 
       # Publish the Docker image to GCR
