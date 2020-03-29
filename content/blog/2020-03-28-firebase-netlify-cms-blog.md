@@ -26,7 +26,7 @@ Netlifyが作るOSSのCMSです。SPAで動作をし、GitHubと連携すると�
 
 ![](/img/screen-shot-2020-03-29-at-18.40.49.png)
 
-今回はNetlify CMSをCMSとして使いGatsbyをフレームワークにし、Firebase Hostingにデプロイしてみます。\
+今回はNetlify CMSをCMSとして使いGatsbyをフレームワークにし、Firebase Hostingにデプロイしてみます。\
 GitHub Pagesもいいかもと思ったんですが、ビルドした成果物をコミットする必要もないし認証にFirebase Authenticationを利用するので慣れているFirebase Hostingを利用します。
 
 # Setup
