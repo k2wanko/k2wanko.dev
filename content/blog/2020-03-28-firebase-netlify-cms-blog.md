@@ -157,7 +157,7 @@ FirebaseでのGitHub認証については公式のドキュメントを確認し
 
 [Authenticate Using GitHub with JavaScript | Firebase](https://firebase.google.com/docs/auth/web/github-auth)
 
-あとは`npm start` でDevサーバーが起動すれば `http://localhost:8000/admin` にアクセスし、GitHubログインできれば完了です。
+あとは`npm start` でDevサーバーが起動し `http://localhost:8000/admin` にアクセスし、GitHubログインできれば完了です。
 
 ![Netlify CMSのTop](/img/screen-shot-2020-03-29-at-18.32.14.png "Netlify CMSのTop")
 
