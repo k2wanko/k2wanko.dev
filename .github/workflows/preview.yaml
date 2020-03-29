@@ -46,6 +46,7 @@ jobs:
       # Build the Docker image
       - name: Build
         run: |
+          npm ci
           FIREBASE_TOKEN=$(gcloud auth print-access-token) npm run build --if-present
           docker build -t ${HOSTNAME}/${PROJECT}/${SERVICE} .
 
