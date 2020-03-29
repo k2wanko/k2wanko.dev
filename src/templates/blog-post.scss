@@ -1,3 +1,5 @@
+@import "~bulma/bulma.sass";
+
 .blog-post {
     h1 {
         @include desktop {
@@ -5,7 +7,7 @@
         }
 
         @include until($desktop) {
-            font-size: 1rem;
+            font-size: 2rem;
         }
     }
 

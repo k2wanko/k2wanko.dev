@@ -17,6 +17,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        thumbnail={post.frontmatter.thumbnail}
       />
       <article>
         <header>
@@ -38,6 +39,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           >
             {post.frontmatter.date}
           </p>
+          <figure className="image is-16by9">
+            <img src={post.frontmatter.thumbnail} alt={post.frontmatter.title} />
+          </figure>
         </header>
         <section className="blog-post" dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
@@ -97,6 +101,8 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        thumbnail
+        tags
       }
     }
   }

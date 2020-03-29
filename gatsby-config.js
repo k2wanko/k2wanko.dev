@@ -7,6 +7,7 @@ module.exports = {
     },
     description: `コキチーズのホームページ`,
     siteUrl: `https://www.k2wanko.dev/`,
+    thumbnail: `/img/top.png`,
     social: {
       twitter: `k2wanko`,
       github: `k2wanko`,

@@ -63,7 +63,7 @@ const BlogIndex = ({ data, location }) => {
                         </Link>
                       </p>
                       <figure className="image is-16by9">
-                        <img src={node.frontmatter.thumbnail} />
+                        <img src={node.frontmatter.thumbnail} alt={node.frontmatter.title}/>
                       </figure>
                       <p
                         className="subtitle"
