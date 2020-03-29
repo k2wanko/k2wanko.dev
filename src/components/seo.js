@@ -4,7 +4,7 @@ import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import path from 'path'
 
-const SEO = ({ description, lang, meta, title, thumbnail, tags }) => {
+const SEO = ({ description, lang, meta, title, thumbnail, tags, sitePath }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -24,6 +24,13 @@ const SEO = ({ description, lang, meta, title, thumbnail, tags }) => {
   )
 
   const { siteUrl } = site.siteMetadata
+
+  let url
+  if (!sitePath) {
+    url = siteUrl
+  } else {
+    url = path.join(siteUrl, sitePath)
+  }
 
   const metaDescription = description || site.siteMetadata.description
   thumbnail = thumbnail ?? site.siteMetadata.thumbnail
@@ -60,6 +67,10 @@ const SEO = ({ description, lang, meta, title, thumbnail, tags }) => {
           content: metaDescription,
         },
         {
+          property: `og:url`,
+          content: url
+        },
+        {
           property: `og:image`,
           content: thumbnail
         },
@@ -82,6 +93,10 @@ const SEO = ({ description, lang, meta, title, thumbnail, tags }) => {
         {
           name: `twitter:creator`,
           content: site.siteMetadata.social.twitter,
+        },
+        {
+          name: `twitter:site`,
+          content: url,
         },
         {
           name: `twitter:title`,

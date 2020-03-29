@@ -18,6 +18,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
         thumbnail={post.frontmatter.thumbnail}
+        sitePath={post.fields.slug}
       />
       <article>
         <header>
@@ -97,6 +98,9 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      fields {
+        slug
+      }
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
