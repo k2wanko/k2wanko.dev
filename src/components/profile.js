@@ -21,7 +21,7 @@ const Profile = () => {
           social {
             twitter
             github
-            email
+            linkedin
           }
         }
       }
@@ -60,9 +60,9 @@ const Profile = () => {
                     </li>
                     <li>
                         <span>
-                            <i className="mdi mdi-24px mdi-email-outline mdi-dark"></i>
+                            <i className="mdi mdi-24px mdi-linkedin mdi-dark"></i>
                             {` `}
-                            <a href={`mailto:${social.email}`}>{social.email}</a>
+                            <a href={`https://www.linkedin.com/in/${social.linkedin}`}>{social.linkedin}</a>
                         </span>
                     </li>
                 </ul>

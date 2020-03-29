@@ -30,6 +30,7 @@ const Bio = () => {
           social {
             twitter
             github
+            linkedin
           }
         }
       }
@@ -76,6 +77,9 @@ const Bio = () => {
             </a>
             <a className="level-item" href={`https://github.com/${social.github}`}>
               <span className="icon is-small"><i className="mdi mdi-24px mdi-github"></i></span>
+            </a>
+            <a className="level-item" href={`https://www.linkedin.com/in/${social.linkedin}`}>
+              <span className="icon is-small"><i className="mdi mdi-24px mdi-linkedin"></i></span>
             </a>
           </div>
         </nav>
