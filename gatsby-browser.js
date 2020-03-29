@@ -11,10 +11,15 @@ import "firebase/analytics"
 import "first-input-delay"
 import "firebase/performance"
 
+firebase.initializeApp({
+    ...firebaseConfig, ...{
+        measurementId: 'G-GEHQQNBHJP' // k2wanko.dev
+    }
+})
 
-firebase.initializeApp({...firebaseConfig, ...{
-    measurementId: 'G-GEHQQNBHJP' // k2wanko.dev
-}})
-
-firebase.analytics()
+const analytics = firebase.analytics()
 firebase.performance()
+
+export const onRouteUpdate = ({ location, prevLocation }) => {
+    analytics.setCurrentScreen(location.pathname)
+}
