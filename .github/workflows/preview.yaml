@@ -5,7 +5,7 @@ on:
     types: [synchronize, opened, reopened, closed]
 
 env:
-  PROJECT: <YOUR_PROJECT_ID>
+  PROJECT: k2wanko-site
   HOSTNAME: asia.gcr.io
   REGION: asia-northeast1
   SERVICE: preview-${{ github.event.number }}
