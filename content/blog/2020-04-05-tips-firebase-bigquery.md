@@ -15,7 +15,9 @@ Google Analytics for FirebaseのBigQuery 連携をすると、BigQuery にAnalyt
 
 集計や分析を行うとき、まずは利用したいパラメーターを抽出してから加工を行うのが基本なのでGoogle Analyticsでやる場合どうすればいいかのメモ
 
-例として `firebase_screen_class` の場合は まずString型なので `event_params.value.string_value` に入っているので次のような形で取得する `(select value.string_value from unnest(event_params) x where x.key = 'firebase_screen_class')`
+例として `firebase_screen_class` の場合は String型なので `event_params.value.string_value` に入っています。
+
+この場合はselectとunnestを利用して次のような形で取得します。 `(select value.string_value from unnest(event_params) x where x.key = 'firebase_screen_class')`
 
 実際に実行できるSQLまで落とし込むと次のようになり
 
