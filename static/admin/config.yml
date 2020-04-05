@@ -11,6 +11,7 @@ public_folder: /img
 
 collections:
   - name: "blog"
+    identifier_field: "slug"
     label: "Blog"
     folder: "content/blog"
     create: true
