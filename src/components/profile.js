@@ -22,6 +22,11 @@ const Profile = () => {
             twitter
             github
             linkedin
+            youtube {
+              displayName
+              url
+            }
+            twitch
           }
         }
       }
@@ -63,6 +68,20 @@ const Profile = () => {
                             <i className="mdi mdi-24px mdi-linkedin mdi-dark"></i>
                             {` `}
                             <a href={`https://www.linkedin.com/in/${social.linkedin}`}>{social.linkedin}</a>
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            <i className="mdi mdi-24px mdi-youtube mdi-dark"></i>
+                            {` `}
+                            <a href={social.youtube.url}>{social.youtube.displayName}</a>
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            <i className="mdi mdi-24px mdi-twitch mdi-dark"></i>
+                            {` `}
+                            <a href={`https://twitch.tv/${social.twitch}`}>{social.twitch}</a>
                         </span>
                     </li>
                 </ul>

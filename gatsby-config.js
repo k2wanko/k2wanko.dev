@@ -12,6 +12,11 @@ module.exports = {
       twitter: `k2wanko`,
       github: `k2wanko`,
       linkedin: `k2wanko`,
+      twitch: `k2wanko`,
+      youtube: {
+        displayName: `コキっチゃんねる`,
+        url: `https://www.youtube.com/channel/UCqXUdzIKLLsbi_w3qcYZilA`,
+      }
     },
   },
   plugins: [
